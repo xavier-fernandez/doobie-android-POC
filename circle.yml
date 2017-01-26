@@ -1,0 +1,16 @@
+machine:
+  environment:
+    ANDROID_HOME: /usr/local/android-sdk-linux
+    CODACY_PROJECT_TOKEN: 1950779b0f2a4f21981559f97795209e
+
+dependencies:
+  pre:
+    - echo y | android update sdk --no-ui --all --filter "build-tools-23.1.1,extra-android-m2repository,extra-android-support,extra-google-m2repository,extra-google-google_play_services"
+    
+test:
+  override: 
+    - sbt clean coverage test
+  post:
+    - sbt coverageReport
+    - sbt coverageAggregate
+    - sbt codacyCoverage

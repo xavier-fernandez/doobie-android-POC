@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.doobie"
+    android:versionCode="1"
+    android:versionName="0.0.1">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-sdk
+        android:targetSdkVersion="24"
+        android:minSdkVersion="17" />
+    <application
+        android:name="android.support.multidex.MultiDexApplication"
+        android:label="Doobie-Android-Sample"
+        android:icon="@drawable/ic_launcher"
+        android:screenOrientation="portrait"
+        android:allowBackup="true"
+        android:theme="@android:style/Theme.NoTitleBar">
+        <activity
+            android:name=".view.MainActivity"
+            android:screenOrientation="portrait"
+            android:label="doobie-android">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>
