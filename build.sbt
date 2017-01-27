@@ -27,7 +27,7 @@ proguardOptions in Android ++= Seq(
   "-keep class scala.Dynamic",
   "-keep class scala.concurrent.ExecutionContext",
   "-keep class com.fortysevendeg.mvessel.AndroidDriver",
-  "-keep class slick.driver.SQLiteDriver",
+  "-keep class scala.Array { **; }",
   "-dontwarn rx.internal.util.**",
   "-dontwarn sun.misc.Unsafe"
 )
@@ -77,7 +77,6 @@ libraryDependencies ++= Seq(
   "org.tpolecat" %% "doobie-core-cats" % "0.4.1",
   "com.fortysevendeg" %% "mvessel-android" % "0.1",
   "org.slf4j" % "slf4j-nop" % "1.7.21",
-  "org.joda" % "joda-convert" % "1.8.1",
   "io.circe" %% "circe-core" % "0.7.0",
   "io.circe" %% "circe-generic" % "0.7.0",
   "io.circe" %% "circe-parser" % "0.7.0"
