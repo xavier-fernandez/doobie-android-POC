@@ -7,8 +7,6 @@ import macroid.FullDsl._
 import macroid._
 import macroid.contrib.TextTweaks
 import doobie.imports._
-import cats._, cats.data._, cats.implicits._
-import fs2.interop.cats._
 
 class MainActivity
   extends FragmentActivity
@@ -23,9 +21,7 @@ class MainActivity
   //**********    DATABASE TRANSACTOR    **********
   //***********************************************
 
-  private[this] def xa(implicit ctx: ContextWrapper) = {
-    new DatabaseOpenHelper(getApplicationContext).xa
-  }
+  private[this] lazy val xa = new DatabaseOpenHelper(getApplicationContext).xa
 
   //***********************************************
   //*************      APP LOGIC     **************
@@ -52,7 +48,7 @@ class MainActivity
         .unique
         .transact(xa)
         .unsafePerformIO
-          .toString
+        .toString
 
     TextTweaks.large + text(queryResult.toString) + hide
   }
