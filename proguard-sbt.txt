@@ -587,3 +587,7 @@
 -dontwarn io.reactivex.functions.Function
 -dontwarn rx.internal.util.**
 -dontwarn sun.misc.Unsafe
+
+# Doobie
+-keep class scala.Array
+-keep class java.lang.Object

@@ -27,7 +27,8 @@ proguardOptions in Android ++= Seq(
   "-keep class scala.Dynamic",
   "-keep class scala.concurrent.ExecutionContext",
   "-keep class com.fortysevendeg.mvessel.AndroidDriver",
-  "-keep class scala.Array { **; }",
+  "-keep class scala.Array.**",
+  "-keep class java.lang.Object.**",
   "-dontwarn rx.internal.util.**",
   "-dontwarn sun.misc.Unsafe"
 )
