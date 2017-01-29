@@ -211,3 +211,6 @@ proguard/
 # sftp configuration file
 sftp-config.json
 project/project/
+
+# Proguard - SBT IntelIJ generated files
+proguard-sbt.txt
