@@ -27,10 +27,20 @@ proguardOptions in Android ++= Seq(
   "-keep class scala.Dynamic",
   "-keep class scala.concurrent.ExecutionContext",
   "-keep class com.fortysevendeg.mvessel.AndroidDriver",
-  "-keep class scala.Array.**",
-  "-keep class java.lang.Object.**",
+  "-keep class scala.Array",
+  "-keep class scala.collection.SeqLike { public protected *; }",
   "-dontwarn rx.internal.util.**",
-  "-dontwarn sun.misc.Unsafe"
+  "-dontwarn sun.misc.Unsafe",
+  "-keep class scala.Int",
+  "-keep class scala.Boolean",
+  "-keep class scala.Unit",
+  "-keep class scala.Long",
+  "-keep class scala.Char",
+  "-keep class scala.Double",
+  "-keep class scala.Float",
+  "-keep class scala.Short",
+  "-keep class scala.Byte",
+  "-keep class scala.reflect.ScalaSignature"
 )
 
 proguardScala in Android := true
